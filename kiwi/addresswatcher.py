@@ -21,7 +21,7 @@ def iter_events(url, interval=1, recursive=True):
                       'wait': True,
                       'waitIndex': waitindex}
 
-            r = requests.get(url, params=params)
+            r = requests.get(url, params=params, verify=False)
             r.raise_for_status()
 
             event = r.json()

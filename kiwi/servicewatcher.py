@@ -31,7 +31,7 @@ def iter_events(url, interval=1):
 
     while True:
         try:
-            r = requests.get(url, stream=True)
+            r = requests.get(url, stream=True, verify=False)
             r.raise_for_status()
             for event in iter_request_events(r.raw):
                 yield event
