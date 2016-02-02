@@ -21,7 +21,7 @@ def iter_events(url, interval=1, recursive=True):
                       'wait': True,
                       'waitIndex': waitindex}
 
-            r = requests.get(url, params=params, verify=False)
+            r = requests.get(url, params=params, verify='ssl/admin-key.pem')
             r.raise_for_status()
 
             event = r.json()
